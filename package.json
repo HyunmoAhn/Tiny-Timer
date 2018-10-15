@@ -7,7 +7,8 @@
   "author": "hyunmoahn <mos_dev@naver.com>",
   "license": "MIT",
   "scripts": {
-    "start": "electron -r @babel/register ./app/index.js"
+    "dev": "electron -r @babel/register ./app/index.js",
+    "start": "nodemon --exec \"npm run dev\" --ext js --ignore build/ --ignore dist/"
   },
   "dependencies": {
     "electron": "^3.0.4"
@@ -15,6 +16,7 @@
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
-    "@babel/register": "^7.0.0"
+    "@babel/register": "^7.0.0",
+    "nodemon": "^1.18.4"
   }
 }
