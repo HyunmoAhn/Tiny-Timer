@@ -11,7 +11,8 @@
     "start": "nodemon --exec \"npm run dev\" --ext js --ignore build/ --ignore dist/"
   },
   "dependencies": {
-    "electron": "^3.0.4"
+    "electron": "^3.0.4",
+    "menubar": "^5.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
