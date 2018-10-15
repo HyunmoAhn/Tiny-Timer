@@ -1,5 +1,3 @@
-const { app } = require('electron');
+import { app } from 'electron';
 
-app.on('ready', function() {
-  console.log('Hello World');
-});
+app.on('ready', () => console.log('Hello World'));
