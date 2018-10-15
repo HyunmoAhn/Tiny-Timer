@@ -2,14 +2,19 @@
   "name": "Tiny-Timer",
   "version": "0.0.1",
   "description": "Simple timer desktop application using electron",
-  "main": "app/index.js",
+  "main": "./app/index.js",
   "repository": "https://github.com/HyunmoAhn/Tiny-Timer.git",
   "author": "hyunmoahn <mos_dev@naver.com>",
   "license": "MIT",
   "scripts": {
-    "start": "electron ."
+    "start": "electron -r @babel/register ./app/index.js"
   },
   "dependencies": {
     "electron": "^3.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0"
   }
 }
