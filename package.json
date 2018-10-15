@@ -1,0 +1,15 @@
+{
+  "name": "Tiny-Timer",
+  "version": "0.0.1",
+  "description": "Simple timer desktop application using electron",
+  "main": "app/index.js",
+  "repository": "https://github.com/HyunmoAhn/Tiny-Timer.git",
+  "author": "hyunmoahn <mos_dev@naver.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^3.0.4"
+  }
+}
