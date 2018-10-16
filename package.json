@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "electron -r @babel/register ./app/index.js",
-    "start": "nodemon --exec \"npm run dev\" --ext js --ignore build/ --ignore dist/"
+    "start": "nodemon --exec \"npm run dev\" --ext js --ignore build/ --ignore dist/ --ignore app/page"
   },
   "dependencies": {
     "electron": "^3.0.4",

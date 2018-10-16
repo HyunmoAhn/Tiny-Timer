@@ -5,7 +5,7 @@ import TrayBar from 'menubar';
 
 const tray = TrayBar({
   index: url.format({
-    pathname: path.resolve(__dirname, 'timer.html'),
+    pathname: path.resolve(__dirname, 'page/timer.html'),
     protocol: 'file:',
     slashes: true,
   }),
