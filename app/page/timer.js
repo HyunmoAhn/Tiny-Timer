@@ -1,3 +1,5 @@
+import { remote } from 'electron';
+
 function setTimer() {
   return `<div>Set!!</div>`
 }
@@ -9,6 +11,7 @@ function countTimer() {
 function init() {
   const root = document.getElementById('root');
 
+  console.log(remote);
   root.innerHTML = setTimer();
 }
 

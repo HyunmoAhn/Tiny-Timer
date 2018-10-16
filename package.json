@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "electron -r @babel/register ./app/index.js",
-    "start": "nodemon --exec \"npm run dev\" --ext js --ignore build/ --ignore dist/ --ignore app/page"
+    "main": "nodemon --exec \"npm run dev\" --ext js --ignore build/ --ignore dist/ --ignore app/page",
+    "start": "NODE_ENV=development webpack-dev-server --hot --inline --watch"
   },
   "dependencies": {
     "electron": "^3.0.4",
@@ -18,6 +19,12 @@
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "@babel/register": "^7.0.0",
-    "nodemon": "^1.18.4"
+    "babel-loader": "^8.0.4",
+    "cross-env": "^5.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "nodemon": "^1.18.4",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
   }
 }

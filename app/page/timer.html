@@ -10,5 +10,13 @@
 <body>
   <div id="root"></div>
 </body>
-<script src="timer.js"></script>
+<script>
+  const scripts = [];
+
+  if (process.env.NODE_ENV === 'development') {
+    scripts.push('<script defer src=\"http://localhost:3001/build/timer.js"><\/script>');
+  }
+
+  document.write(scripts.map(script => script));
+</script>
 </html>
