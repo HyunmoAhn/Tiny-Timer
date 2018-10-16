@@ -1,5 +1,5 @@
 function setTimer() {
-  return `<div>Set</div>`
+  return `<div>Set!!</div>`
 }
 
 function countTimer() {
