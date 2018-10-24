@@ -14,7 +14,8 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "electron": "^3.0.4",
-    "menubar": "^5.2.3"
+    "menubar": "^5.2.3",
+    "mousetrap": "^1.6.2"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
