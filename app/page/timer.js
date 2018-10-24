@@ -1,4 +1,5 @@
 import cx from 'classnames';
+import Mousetrap from 'mousetrap';
 
 /**
  * Manager data of timer.
@@ -30,6 +31,71 @@ class Timer {
     clearInterval(this.tick);
     this.tick = null;
   }
+}
+
+/**
+ * Draw view and handle event for setting mode.
+ * @param(Timer) timer: data for timer.
+ */
+function settingMode(timer) {
+  const timerRoot = document.getElementById('timer-root');
+  timerRoot.innerHTML = settingView(timer.time);
+  const submitDOM = document.getElementsByTagName('form')[0];
+  submitDOM.addEventListener('submit', () => countingMode(timer));
+
+  timer.stopTimeProgress();
+  Mousetrap.unbind('space');
+  Mousetrap.unbind('backspace');
+  Mousetrap.bind('enter', () => countingMode(timer));
+}
+
+/**
+ * Draw view and handle event for counting mode.
+ * @param(Timer) timer: data for timer.
+ */
+function countingMode(timer) {
+  /**
+   * progress timer or stop timer.
+   */
+  function toggleTimer() {
+    if (timer.tick) {
+      timer.stopTimeProgress();
+    } else {
+      timer.runTimeProgress(progressTimer);
+    }
+  }
+
+  function progressTimer() {
+    if (timer.remain > 0) {
+      renderProgressView(timer.getRemainTime())
+    } else {
+      timer.stopTimeProgress();
+      settingMode(timer);
+    }
+  }
+
+  /**
+   * Calculate second using extracted data from DOM.
+   * @returns {number}: second of timer.
+   */
+  function calculateTime() {
+    const hour = Number(document.getElementsByClassName('Setting__hour')[0].value);
+    const minute = Number(document.getElementsByClassName('Setting__minute')[0].value);
+    const second = Number(document.getElementsByClassName('Setting__second')[0].value);
+
+    return hour * 3600 + minute * 60 + second;
+  }
+
+  const time = calculateTime();
+  renderProgressView(time);
+  timer.setTime(time);
+  timer.runTimeProgress(progressTimer);
+
+  const container = document.getElementsByClassName('Progress__Container')[0];
+  container.addEventListener('click', toggleTimer);
+  Mousetrap.bind('space', toggleTimer);
+  Mousetrap.bind('backspace', () => settingMode(timer));
+  Mousetrap.unbind('enter');
 }
 
 /**
@@ -94,10 +160,12 @@ function commentView() {
 }
 
 function init() {
-  const root = document.getElementById('root');
+  const commentRoot = document.getElementById('comment-root');
+  commentRoot.innerHTML = commentView();
 
-  console.log(remote);
-  root.innerHTML = setTimer();
+  const timer = new Timer(300);
+
+  settingMode(timer);
 }
 
 init();
