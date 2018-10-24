@@ -12,6 +12,7 @@
     "start": "NODE_ENV=development webpack-dev-server --hot --inline --watch"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "electron": "^3.0.4",
     "menubar": "^5.2.3"
   },
