@@ -1,4 +1,4 @@
-import { app } from 'electron';
+import { app, globalShortcut } from 'electron';
 import path from 'path';
 import url from 'url';
 import TrayBar from 'menubar';
@@ -16,4 +16,20 @@ const tray = TrayBar({
 
 app.on('ready', () => {
   tray.showWindow();
+});
+
+tray.on('show', () => {
+  globalShortcut.register('Escape', () => {
+    if (tray.window && tray.window.isFocused()) {
+      tray.window.blur(); // Need to reopen in windowOS
+      tray.hideWindow(); // Need to reopen in macOS
+    }
+  });
+});
+
+tray.on('hide', () => {
+  /**
+   * If you don't this, Escape key doesn't active another application.
+   */
+  globalShortcut.unregister('Escape');
 });
