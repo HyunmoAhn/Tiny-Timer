@@ -1,5 +1,6 @@
 import cx from 'classnames';
 import Mousetrap from 'mousetrap';
+import './timer.scss';
 
 /**
  * Manager data of timer.
