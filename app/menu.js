@@ -1,7 +1,16 @@
 import { app, Menu } from 'electron';
+import { autoLaunch, isAutoLaunch }from './autoLaunch';
+import '@babel/polyfill';
 
 // reference by https://electronjs.org/docs/api/menu#examples
-export default () => {
+export default async () => {
+  const isAuto = await isAutoLaunch();
+  const autoLaunchMenu = {
+    click: autoLaunch,
+    role: 'Launch Tiny-Timer at login',
+    checked: isAuto,
+  };
+
   const template = [
     {
       label: 'Edit',
@@ -44,7 +53,8 @@ export default () => {
         {
           label: 'Learn More',
           click () { require('electron').shell.openExternal('https://github.com/hyunmoahn/tiny-timer') }
-        }
+        },
+        autoLaunchMenu,
       ]
     }
   ]
