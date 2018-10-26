@@ -109,15 +109,15 @@ function renderProgressView(time) {
     const minute = parseInt((number - hour * 60) / 60);
     const second = number % 60;
 
-    const hourClassName = cx('Progress__hour', { 'Progress__hour--hide': hour === 0 });
-    const minuteClassName = cx('Progress__minute', { 'Progress__minute--hide': minute === 0 && hour === 0 });
-    const secondClassName = cx('Progress__second');
+    const hourClassName = cx('Progress__number', 'Progress__hour', { 'Progress__number--hide': hour === 0 });
+    const minuteClassName = cx('Progress__number', 'Progress__minute', { 'Progress__number--hide': minute === 0 && hour === 0 });
+    const secondClassName = cx('Progress__number', 'Progress__second');
 
     return `
     <div class="Progress__Container">
-      <span class=${hourClassName}>${hour}</span>
-      <span class=${minuteClassName}>${minute}</span>
-      <span class=${secondClassName}>${second}</span>
+      <p class="${hourClassName}"><span>${hour}</span></p>
+      <p class="${minuteClassName}"><span>${minute}</span></p>
+      <p class="${secondClassName}"><span>${second}</span></p>
     </div>
   `;
   }
@@ -137,12 +137,12 @@ function settingView(number) {
   const second = number % 60;
 
   return `
-    <form>
-      <input class="Setting__hour" autofocus placeholder="0" type="number" value=${hour}>
-      <span>:</span>
-      <input class="Setting__minute" placeholder="00" type="number" value=${minute}>
-      <span>:</span>
-      <input class="Setting__second" placeholder="00" type="number" value=${second}>
+    <form class="Setting__container">
+      <input class="Setting__input Setting__hour" autofocus placeholder="0" type="number" value=${hour} min=0 max=24>
+      <span class="Setting__colon">:</span>
+      <input class="Setting__input Setting__minute" placeholder="00" type="number" value=${minute} min=0 max=59>
+      <span class="Setting__colon">:</span>
+      <input class="Setting__input Setting__second" placeholder="00" type="number" value=${second} min=0 max=59>
       <input class="Setting__submit-btn" type="submit">
     </form>
   `;
@@ -154,8 +154,8 @@ function settingView(number) {
  */
 function commentView() {
   return `
-    <div>
-      <input type="text" placeholder="Please type to alert message">
+    <div class="Comment__container">
+      <textarea class="Comment__input" placeholder="Type to alert message">Please type to alert message</textarea>
     </div>
   `;
 }
