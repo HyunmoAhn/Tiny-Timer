@@ -106,7 +106,7 @@ function countingMode(timer) {
 function renderProgressView(time) {
   function progressView(number) {
     const hour = parseInt(number / 3600);
-    const minute = parseInt((number - hour * 60) / 60);
+    const minute = parseInt((number - hour * 3600) / 60);
     const second = number % 60;
 
     const hourClassName = cx('Progress__number', 'Progress__hour', { 'Progress__number--hide': hour === 0 });
@@ -133,7 +133,7 @@ function renderProgressView(time) {
  */
 function settingView(number) {
   const hour = parseInt(number / 3600);
-  const minute = parseInt((number - hour * 60) / 60);
+  const minute = parseInt((number - hour * 3600) / 60);
   const second = number % 60;
 
   return `
