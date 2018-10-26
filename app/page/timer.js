@@ -1,3 +1,4 @@
+import path from 'path';
 import cx from 'classnames';
 import Mousetrap from 'mousetrap';
 import './timer.scss';
@@ -22,6 +23,7 @@ class Timer {
   }
 
   runTimeProgress(cb) {
+    document.getElementsByTagName('body')[0].classList.remove('stop');
     this.tick = setInterval(() => {
       this.remain -= 1;
       cb();
@@ -29,6 +31,7 @@ class Timer {
   }
 
   stopTimeProgress() {
+    document.getElementsByTagName('body')[0].classList.add('stop');
     clearInterval(this.tick);
     this.tick = null;
   }
@@ -45,6 +48,7 @@ function settingMode(timer) {
   submitDOM.addEventListener('submit', () => countingMode(timer));
 
   timer.stopTimeProgress();
+  document.getElementsByTagName('body')[0].classList.remove('stop');
   Mousetrap.unbind('space');
   Mousetrap.unbind('backspace');
   Mousetrap.bind('enter', () => countingMode(timer));
