@@ -1,3 +1,120 @@
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: local('나눔고딕 Regular'), url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot);
+  src: url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+  url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff2) format('woff2'),
+  url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff) format('woff'),
+  url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.ttf) format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Nanum Gothic';
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+input,
+textarea {
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  opacity: 0.8;
+  margin: 0;
+  padding: 0;
+
+  &:focus {
+    opacity: 1;
+    border: 3px solid blue;
+    border-radius: 5px;
+  }
+}
+
+.Setting__container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: stretch;
+  flex-wrap: nowrap;
+  align-self: center;
+}
+
+.Setting__input {
+  margin: 0;
+  padding: 5px;
+  width: 60px;
+  height: 50px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.Setting__colon {
+  font-size: 2em;
+  padding: 5px;
+}
+
 .Setting__submit-btn {
+  display: none;
+}
+
+.Comment__container {
+  display: flex;
+}
+
+.Comment__input {
+  align-self: center;
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+  width: 210px;
+}
+
+.Progress__Container {
+  display: flex;
+  justify-content: center;
+  align-content: stretch;
+  width: 230px;
+}
+
+.Progress__number {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-grow: 1;
+  font-size: 2em;
+  padding: 10px;
+  margin: 0;
+}
+
+.Progress__hour {
+  &::after {
+    content: ":";
+    display: inline;
+    font-size: 35px;
+    position: relative;
+    left: 25%;
+  }
+}
+
+.Progress__minute {
+  &::after {
+    content: ":";
+    display: inline;
+    font-size: 35px;
+    position: relative;
+    left: 35%;
+  }
+}
+
+.Progress__number--hide {
   display: none;
 }
