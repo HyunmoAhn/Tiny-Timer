@@ -10,8 +10,8 @@ const tray = TrayBar({
     slashes: true,
   }),
   icon: path.resolve(__dirname, 'assets/clockTemplate.png'),
-  width: 250,
-  height: 100,
+  width: 235,
+  height: 130,
 });
 
 app.on('ready', () => {
