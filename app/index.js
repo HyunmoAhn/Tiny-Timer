@@ -2,6 +2,7 @@ import { app, globalShortcut } from 'electron';
 import path from 'path';
 import url from 'url';
 import TrayBar from 'menubar';
+import createMenu from './menu.js';
 
 const tray = TrayBar({
   index: url.format({
@@ -11,11 +12,13 @@ const tray = TrayBar({
   }),
   icon: path.resolve(__dirname, 'assets/clockTemplate.png'),
   width: 235,
-  height: 130,
+  height: 145,
+  alwaysOnTop: true,
 });
 
 app.on('ready', () => {
   tray.showWindow();
+  createMenu();
 });
 
 tray.on('show', () => {
