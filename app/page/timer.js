@@ -72,6 +72,14 @@ function countingMode(timer) {
     } else {
       timer.stopTimeProgress();
       settingMode(timer);
+      const text = document.getElementsByClassName('Comment__input')[0].value;
+      const notification = {
+        title: 'Time is up',
+        body: text,
+        icon: path.join
+      }
+
+      new Notification(notification.title, notification);
     }
   }
 
