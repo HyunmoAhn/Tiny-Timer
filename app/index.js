@@ -1,4 +1,5 @@
 import { app, globalShortcut } from 'electron';
+import { autoUpdater } from 'electron-updater';
 import path from 'path';
 import url from 'url';
 import TrayBar from 'menubar';
@@ -19,6 +20,9 @@ const tray = TrayBar({
 app.on('ready', () => {
   tray.showWindow();
   createMenu();
+  autoUpdater.checkForUpdatesAndNotify()
+    .then((data) => console.log('data', data))
+    .catch((err) => console.log(err));
 });
 
 app.on('activate', (e, isOpenWindow) => {
@@ -43,4 +47,11 @@ tray.on('hide', () => {
    * If you don't this, Escape key doesn't active another application.
    */
   globalShortcut.unregister('Escape');
+});
+
+autoUpdater.setFeedURL({
+  provider: 'github',
+  owner: 'hyunmoahn',
+  protocol: 'https',
+  repo: 'tiny-timer',
 });
