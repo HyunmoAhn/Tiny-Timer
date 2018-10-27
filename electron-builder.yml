@@ -1,0 +1,21 @@
+appId: "com.tiny.timer.omd"
+productName: "Tiny-Timer"
+win:
+  target: [{
+    target: "nsis",
+    arch: ["x64", "ia32"],
+  }]
+  icon: "app/assets/clock.png"
+nsis:
+  installerHeaderIcon: "app/assets/clock.png"
+mac:
+#  target: "dmg" # If activate it, builder is faster. But When Production build, It don't recommand.
+  category: "tiny.timer"
+  icon: "app/assets/clock"
+dmg:
+  icon: "app/assets/clock.png"
+files:
+- "build"
+- "node_modules"
+- "app/assets"
+compression: "maximum"

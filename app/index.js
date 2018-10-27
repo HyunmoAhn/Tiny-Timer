@@ -6,11 +6,11 @@ import createMenu from './menu.js';
 
 const tray = TrayBar({
   index: url.format({
-    pathname: path.resolve(__dirname, 'page/timer.html'),
+    pathname: process.env.NODE_ENV === 'development' ? path.resolve(__dirname, 'page/timer.html') : path.resolve(__dirname, 'timer.html'),
     protocol: 'file:',
     slashes: true,
   }),
-  icon: path.resolve(__dirname, 'assets/clockTemplate.png'),
+  icon: process.env.NODE_ENV === 'development' ? path.join(__dirname, 'assets/clockTemplate.png') : path.join(__dirname, '../app/assets/clockTemplate.png'),
   width: 235,
   height: 145,
   alwaysOnTop: true,

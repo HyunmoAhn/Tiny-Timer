@@ -3,3 +3,4 @@
 *.log
 /build
 /dist
+release.sh
