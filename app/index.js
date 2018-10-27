@@ -14,11 +14,20 @@ const tray = TrayBar({
   width: 235,
   height: 145,
   alwaysOnTop: true,
+  showDockIcon: true,
 });
 
 app.on('ready', () => {
   tray.showWindow();
   createMenu();
+});
+
+app.on('activate', (e, isOpenWindow) => {
+  if (!isOpenWindow) {
+    tray.showWindow();
+  } else {
+    tray.hideWindow();
+  }
 });
 
 tray.on('show', () => {
