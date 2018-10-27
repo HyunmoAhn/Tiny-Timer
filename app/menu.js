@@ -7,7 +7,8 @@ export default async () => {
   const isAuto = await isAutoLaunch();
   const autoLaunchMenu = {
     click: autoLaunch,
-    role: 'Launch Tiny-Timer at login',
+    type: 'checkbox',
+    label: 'Launch Tiny-Timer at login',
     checked: isAuto,
   };
 
