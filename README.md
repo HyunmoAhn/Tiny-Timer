@@ -3,9 +3,13 @@
   <img width="256" height="256" src="https://user-images.githubusercontent.com/23732795/47601493-760fa680-da0c-11e8-828c-0a5c2a23d447.png">
 </p>
 
+### For application
 Simple timer desktop app using electron
 
+### For boilerplate
 Can be referred to electron basic setting like `hot-loading`, `build`, `auto-launch`, `auto-update` etc.
+> I have managed [oh-my-desk](https://github.com/ahki/oh-my-desk) maked electron.
+> [oh-my-desk](https://github.com/ahki/oh-my-desk) has a core feature that is needed for other electron projects as well. (like `hot-loading`, `auto-update`, `auto-launch` etc.) But It is huge project to consult a core features. Therefore, [Tiny-Timer](https://github.com/hyunmoahn/tiny-timer) is a simple project and is easy to consult about how to make a core feature.
 ## Downloads
 Following [link](https://github.com/HyunmoAhn/Tiny-Timer/releases/tag/v1.0.0) and Download matched file about OS.
 
