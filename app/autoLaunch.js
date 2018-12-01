@@ -17,7 +17,7 @@ function autoLaunch() {
     .then((isEnable) => {
       if (!isEnable) {
         AutoLauncher.enable();
-      } else if (isEnable) {
+      } else {
         AutoLauncher.disable();
       }
     });
