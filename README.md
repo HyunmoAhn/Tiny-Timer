@@ -68,6 +68,7 @@ Please reter to this repository.
 - [Config Auto-Updater](https://github.com/HyunmoAhn/Tiny-Timer/pull/8)
   - Feature **Auto Update**
   - use [electron-updater](https://github.com/electron-userland/electron-builder)
+  - **Auto Update need to [Code-Signing](https://www.electron.build/code-signing). If you want, commit about code-signing, leave an issue!**
   
 ## Contributing
 
