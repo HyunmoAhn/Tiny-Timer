@@ -13,9 +13,9 @@ Can be referred to electron basic setting like `hot-loading`, `build`, `auto-lau
 ## Downloads
 Following [link](https://github.com/HyunmoAhn/Tiny-Timer/releases/tag/v1.0.1) and Download matched file about OS.
 
-[MAC download Tiny-Timer-1.0.0.dmg](https://github.com/HyunmoAhn/Tiny-Timer/releases/download/v1.0.1/Tiny-Timer-1.0.1.dmg)
+[MAC download Tiny-Timer-1.0.1.dmg](https://github.com/HyunmoAhn/Tiny-Timer/releases/download/v1.0.1/Tiny-Timer-1.0.1.dmg)
 
-[Window download Tiny-Timer-Setup-1.0.0.exe](https://github.com/HyunmoAhn/Tiny-Timer/releases/download/v1.0.1/Tiny-Timer-Setup-1.0.1.exe)
+[Window download Tiny-Timer-Setup-1.0.1.exe](https://github.com/HyunmoAhn/Tiny-Timer/releases/download/v1.0.1/Tiny-Timer-Setup-1.0.1.exe)
 ## Overview
 <p align="center">
   <img src="https://user-images.githubusercontent.com/23732795/47601521-1d8cd900-da0d-11e8-92e7-daad4e214dd1.png">
