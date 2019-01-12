@@ -1,6 +1,6 @@
 {
   "name": "Tiny-Timer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple timer desktop application using electron",
   "main": "./build/main.js",
   "repository": "https://github.com/HyunmoAhn/Tiny-Timer.git",
